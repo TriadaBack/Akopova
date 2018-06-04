@@ -22,7 +22,6 @@ public class GroupCreationTest {
     public void testGroupCreation() throws Exception {
         //openSite
         driver.get("http://localhost/addressbook/");
-
         //login
         driver.findElement(By.name("user")).click();
         driver.findElement(By.name("user")).clear();
