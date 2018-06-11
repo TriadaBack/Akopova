@@ -9,12 +9,12 @@ public class GroupCreationTest extends TestBase {
     public void testGroupCreationLongName() {
 
         app.goToGroupsPage();
-        int before = app.getGroupCount();
-        app.initGroupCreation();
-        app.fillGroupForm(new GroupData("Name", "Header", "Footer"));
-        app.submitGroupCreation();
-        app.returnToGroupsPage();
-        int after = app.getGroupCount();
+        int before = app.getGroupHelper().getGroupCount();
+        app.getGroupHelper().initGroupCreation();
+        app.getGroupHelper().fillGroupForm(new GroupData("Name", "Header", "Footer"));
+        app.getGroupHelper().submitGroupCreation();
+        app.getGroupHelper().returnToGroupsPage();
+        int after = app.getGroupHelper().getGroupCount();
         Assert.assertEquals(after,before+1);
         //System.out.println("testGroupCreationLongName()passed");
     }
@@ -25,11 +25,11 @@ public class GroupCreationTest extends TestBase {
 
 
         app.goToGroupsPage();
-        int before = app.getGroupCount();
-        app.initGroupCreation();
-        app.fillGroupForm(new GroupData("N", "H", "F"));
-        app.submitGroupCreation();
-        app.returnToGroupsPage();
+        int before = app.getGroupHelper().getGroupCount();
+        app.getGroupHelper().initGroupCreation();
+        app.getGroupHelper().fillGroupForm(new GroupData("N", "H", "F"));
+        app.getGroupHelper().submitGroupCreation();
+        app.getGroupHelper().returnToGroupsPage();
         Assert.assertEquals(after, before+1);
         //System.out.println("testGroupCreationShortName()passed");
     }
@@ -38,9 +38,9 @@ public class GroupCreationTest extends TestBase {
     public void testGroupCreationEmpty() {
 
         app.goToGroupsPage();
-        app.initGroupCreation();
-        app.fillGroupForm(new GroupData("", "", ""));
-        app.submitGroupCreation();
-        app.returnToGroupsPage();
+        app.getGroupHelper().initGroupCreation();
+        app.getGroupHelper().fillGroupForm(new GroupData("", "", ""));
+        app.getGroupHelper().submitGroupCreation();
+        app.getGroupHelper().returnToGroupsPage();
     }
 }

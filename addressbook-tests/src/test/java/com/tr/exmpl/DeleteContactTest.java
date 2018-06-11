@@ -12,8 +12,8 @@ import org.testng.annotations.Test;
   //  }
        @Test
        public void contactDeletionTest(){
-           app.selectContact();
-           app.initConactDeletion();
+          app.selectContact();
+          app.initConactDeletion();
            app.accertAllert();
        }
 }
